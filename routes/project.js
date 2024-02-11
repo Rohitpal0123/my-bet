@@ -4,19 +4,19 @@ const {
   authenticateUser,
   authenticateAuctioner,
 } = require("../middleware/authMiddleware");
-router.post("/add", require("../controllers/Projects/add").process);
+router.post("/add", require("../controllers/Project/add").process);
 
 router.put(
   "/update/:id",
   authenticateUser,
   authenticateAuctioner,
-  require("../controllers/Projects/update").process
+  require("../controllers/Project/update").process
 );
 
 router.put(
   "/auction/:id",
   authenticateUser,
   authenticateAuctioner,
-  require("../controllers/Projects/auctionProject").process
+  require("../controllers/Project/auctionProject").process
 );
 module.exports = router;
