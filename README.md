@@ -1,1 +1,1 @@
-#An astonishing live betting platform.
+An astonishing live betting platform.
