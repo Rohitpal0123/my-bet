@@ -55,6 +55,7 @@ class loginUser {
       .send({
         type: RESPONSE_MESSAGE.SUCCESS,
         data: {
+          id: user._id,
           email: user.email,
           role: user.role,
         },

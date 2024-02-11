@@ -1,0 +1,11 @@
+Bet
+1. First check if the chosen product is active or not
+2. If product is active check if a bet by the better for the respective product is alreadyExits in db or not
+
+Winner
+1. As the isActive timer sets as false, run a function which finds the bet to that respective projectId with most betAmt (can use aggregation)
+2. And then sets the respective project's winner and winningBetAmt accordingly.
+
+Winner Confirmation
+1. As the isActive timer sets as false and winner is decided send the winner confirmation mail.
+2. Build an API which looks for the project winner using projectId, if there is one it will return that winner.

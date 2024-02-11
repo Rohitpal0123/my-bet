@@ -8,7 +8,7 @@ class auctionProject {
   async projectExists(id) {
     try {
       const projectExists = await Project.findOne({ _id: id });
-      if (!projectExists) throw "Project doesn't exists !";
+      if (!projectExists) throw "Project does not exists !";
 
       return null;
     } catch (error) {
