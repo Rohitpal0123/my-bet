@@ -40,6 +40,12 @@ class addBet {
       throw error;
     }
   }
+
+  async projectAlreadyAuctioned(projectId) {
+    const projectAlreadyAuctioned = await Project.findOne({_id: projectId}).select("winner -_id");
+    if(projectAlreadyAuctioned.winner) throw new apiError(400, "Project already auctioned!");
+    return null
+}
   process = asyncHandler(async (req, res) => {
     // validate(req.body, addProductSchema);
 
@@ -48,6 +54,7 @@ class addBet {
     await this.userExists(userId);
     await this.projectExists(projectId);
     await this.projectActive(projectId);
+    await this.projectAlreadyAuctioned(projectId);
 
     const newBet = await Bet.create({
       userId: userId,

@@ -12,3 +12,6 @@ and createdAt shoudld be between now and till duration
 Winner Confirmation
 1. As the isActive timer sets as false and winner is decided send the winner confirmation mail.
 2. Build an API which looks for the project winner using projectId, if there is one it will return that winner.
+-- First check if project exists
+-- Is it auctioned
+-- Is winner announced
