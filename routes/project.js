@@ -6,6 +6,7 @@ const {
 } = require("../middleware/authMiddleware");
 
 router.get("/get", require("../controllers/Project/get").process);
+
 router.post("/add", require("../controllers/Project/add").process);
 
 router.put(
