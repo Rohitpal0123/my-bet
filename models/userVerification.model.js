@@ -42,5 +42,5 @@ const userVerificationSchema = new Schema(
   }
 );
 
-UserVerification = mongoose.model("UserVerification", userVerificationSchema);
+const UserVerification = mongoose.model("UserVerification", userVerificationSchema);
 module.exports = UserVerification;
