@@ -7,17 +7,16 @@ const generateToken = require("../../lib/generateToken");
 class signup {
   process = async (req, res) => {
     try {
-      const { userEmail, userOtp } = req.body;
-      console.log("🚀 ~ userOtp:", userOtp);
+      const { email, otp } = req.body;
+      console.log("🚀 ~ otp:", otp);
+      console.log("🚀 ~ email:", email);
 
       const userVerification = await UserVerification.findOne({
-        email: userEmail,
+        email: email,
       });
+      console.log("🚀 ~ userVerification:", userVerification);
 
-      if (
-        userOtp != userVerification.otp &&
-        userEmail != userVerification.email
-      ) {
+      if (otp != userVerification.otp && email != userVerification.email) {
         throw "Invalid OTP or Email!";
       }
       const newUser = await User.create({

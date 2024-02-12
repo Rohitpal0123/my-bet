@@ -15,6 +15,11 @@ const projectSchema = new Schema(
       type: Boolean,
       required: true,
     },
+    winningBetId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "bet",
+      required: false,
+    },
     winner: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "user",
